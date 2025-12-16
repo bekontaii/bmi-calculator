@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const VIEWS_DIR = path.join(__dirname, "views");
 
-// Отдаём index.html из папки views
+
 app.get("/", (req, res) => {
   const indexPath = path.join(VIEWS_DIR, "index.html");
   if (fs.existsSync(indexPath)) {
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   }
 });
 
-// Маршрут для result.html (делает /result.html рабочим)
+
 app.get("/result.html", (req, res) => {
   const resultPath = path.join(VIEWS_DIR, "result.html");
   if (fs.existsSync(resultPath)) {
@@ -30,7 +30,7 @@ app.get("/result.html", (req, res) => {
   }
 });
 
-// Обработка формы: вычисление BMI и редирект на result.html с параметрами
+
 app.post("/calculate-bmi", (req, res) => {
   const weight = parseFloat(req.body.weight);
   const height = parseFloat(req.body.height);
