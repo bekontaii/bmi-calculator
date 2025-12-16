@@ -1,0 +1,123 @@
+/* Общий фон */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #d5e8ff, #f5faff 60%);
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер карточки */
+.container {
+    width: 420px;
+    max-width: 95%;
+    margin: 70px auto;
+
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Поля ввода */
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 12px;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+
+    border: 1.7px solid #bcd2ee;
+    border-radius: 10px;
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #4b8bed;
+    box-shadow: 0 0 6px rgba(75, 139, 237, 0.4);
+    outline: none;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 18px;
+
+    background: #4b8bed;
+    color: white;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #3a70c7;
+}
+
+/* Коробка результата */
+.result-box {
+    border: 3px solid gray;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    background: #f7faff;
+    transition: 0.3s;
+}
+
+/* Кнопка назад */
+.back-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+
+    background: #666;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #444;
+}
+
+/* Цвета категорий — эти классы можно использовать позже */
+.bmi-normal { border-color: #00b327 !important; }
+.bmi-under { border-color: #4aa3ff !important; }
+.bmi-over  { border-color: #ffcc00 !important; }
+.bmi-obese { border-color: #ff4444 !important; }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Result</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Your BMI Result</h1>
+
+  <div id="resultBox" class="result-box">
+    <p id="bmiValue"></p>
+    <p id="categoryValue"></p>
+  </div>
+
+  <a href="/" class="back-btn">Go Back</a>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  const bmi = params.get("bmi");
+  const category = params.get("category");
+  const color = params.get("color");
+  const error = params.get("error");
+
+  const bmiEl = document.getElementById("bmiValue");
+  const catEl = document.getElementById("categoryValue");
+  const box = document.getElementById("resultBox");
+
+  if (error) {
+    bmiEl.textContent = "Invalid input!";
+    catEl.textContent = "";
+    box.style.borderColor = "gray";
+  } else {
+    bmiEl.innerHTML = `<strong>Your BMI:</strong> ${bmi}`;
+    catEl.innerHTML = `<strong>Category:</strong> ${category}`;
+    box.style.borderColor = color;
+  }
+</script>
+</body>
+</html>
